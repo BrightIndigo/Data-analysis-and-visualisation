@@ -1,13 +1,24 @@
 import csv
 
-with open("data.csv", "r") as f: 
-    reader = csv.reader(f)
+EmployeeID = []
+FirstName = []
+LastName = []
+Age = []
+Department = []
+Salary = []
+
+with open("data.csv", newline='') as f:
+    reader = csv.reader(f, delimiter=',')
+    header = next(reader)
     for row in reader:
-        EmployeeID = 0
-        FirstName = 1
-        LastName = 2
-        Age = 3
-        Department = 4
-        Salary = 5
-        
-        print(row[EmployeeID], row[FirstName], row[LastName], row[Age], row[Department], row[Salary])
+        EmployeeID.append(row[0])
+        FirstName.append(row[1])
+        LastName.append(row[2])
+        Age.append(int(row[3]))  # Convert age to integer
+        Department.append(row[4])
+        Salary.append(int(row[5]))  # Convert salary to integer
+
+# Example: Find the average salary
+average_salary = sum(Salary) / len(Salary)
+
+print(f"Average Salary: {average_salary}")
