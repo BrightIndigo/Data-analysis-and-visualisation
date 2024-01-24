@@ -30,17 +30,10 @@ Salary_arr = np.array(Salary)
 mean_salary = np.mean(Salary_arr)
 median_salary = np.median(Salary_arr)
 std_dev_salary = np.std(Salary_arr)
-#=============================================
 
-fig, ax = plt.subplots()
-
-bar_labels = ['red', 'blue', '_red', 'orange']
-bar_colors = ['tab:red', 'tab:blue', 'tab:red', 'tab:orange']
-
-ax.bar(Department_arr, Salary_arr, label=bar_labels, color=bar_colors)
-
-ax.set_ylabel('fruit supply')
-ax.set_title('Fruit supply by kind and color')
-ax.legend(title='Fruit color')
-
+plt.scatter(Age_arr, Salary_arr, label='Age vs. Salary')
+plt.xlabel('Age')
+plt.ylabel('Salary')
+plt.title('Age vs. Salary')
+plt.legend()
 plt.show()
